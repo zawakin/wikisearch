@@ -11,8 +11,8 @@ import json
 
 site = mwclient.Site(("https",'ja.wikipedia.org'))
 
-bllist = ["初音ミク"]
-llist = ["漬物"]
+bllist = ["ゴンペルツ関数"]
+llist = ["根粒菌"]
 bldata = []
 ldata = []
 bldata.append([bllist[0],])
@@ -42,7 +42,7 @@ for d in range(0,2):
     
 print "link search"
 nextindex = 0
-for d in range(0,1):
+for d in range(0,2):
     print "depth",d
     n = len(llist)
     for i in range(nextindex,n):
@@ -70,11 +70,15 @@ for bli in range(0,len(bllist)):
     for li in range(0,len(llist)):
         if(bllist[bli]==llist[li]):
             ss = ""
+            linkN = -1
             for ll in ldata[li][::-1]:
                 ss = ss + "-" + ll + "-"
+                linkN += 1
             
             for bb in bldata[bli][1:]:
                 ss = ss + "=" + bb + "="
+                linkN += 1
+            ss = "({N})".format(N=linkN) + ss    
             print ss
 
 print "howmanyreq = ",howmanyreq
