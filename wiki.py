@@ -11,8 +11,8 @@ import json
 
 site = mwclient.Site(("https",'ja.wikipedia.org'))
 
-bllist = ["自発的対称性の破れ"]
-llist = ["視力"]
+bllist = ["初音ミク"]
+llist = ["漬物"]
 bldata = []
 ldata = []
 bldata.append([bllist[0],])
